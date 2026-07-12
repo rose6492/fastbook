@@ -1,12 +1,21 @@
-name: fastbook
+name: bear-classifier
 channels:
-    - fastai
-    - pytorch
-    - defaults
+  - conda-forge
 dependencies:
-  - python>=3.6
-  - pytorch>=1.6
-  - torchvision
+  - python=3.12
   - pip
+  - numpy<2
+  - mkl=2024.0.0
+  - pillow
   - pip:
-    - -r requirements.txt
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      - torch==2.5.1+cpu
+      - torchvision==0.20.1+cpu
+      - fastai
+      - fastcore
+      - fastdownload
+      - fasttransform
+      - voila
+      - ipywidgets
+      - jupyterlab_widgets
+      - widgetsnbextension
